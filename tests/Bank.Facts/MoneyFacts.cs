@@ -2,6 +2,7 @@
 using Xunit;
 using Bank;
 using System.Globalization;
+using Ploeh.AutoFixture.Xunit2;
 
 namespace Bank.Facts
 {
@@ -26,10 +27,16 @@ namespace Bank.Facts
 			Assert.Equal(new Money(150m), new Money(100m) + new Money(50m));
 		}
 
-		[Fact]
-		public void TestNegOperator()
+		[Theory, AutoData]
+		public void TestNegOperator(decimal a, decimal b)
 		{
-			Assert.Equal(new Money(50m), new Money(100m) - new Money(50m));
+			Assert.Equal(new Money(a - b), new Money(a) - new Money(b));
 		}
+
+	    [Theory, AutoData]
+	    public void Equals(decimal amount)
+	    {
+	        Assert.Equal(new Money(amount), new Money(amount));
+	    }
 	}
 }

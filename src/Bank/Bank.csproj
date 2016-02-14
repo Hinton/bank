@@ -47,10 +47,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="Commands\Balance.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Commands\Withdraw.cs" />
     <Compile Include="InsufficientFundsException.cs" />
     <Compile Include="InvalidAmountException.cs" />
     <Compile Include="Money.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="ATM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
